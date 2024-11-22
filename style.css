@@ -1,0 +1,567 @@
+/* Main styles */
+:root {
+    --madrid-white: #FFFFFF;
+    --madrid-gold: #FAB90A;
+    --madrid-navy: #0B1F3F;
+    --madrid-gray: #2A2A2A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--madrid-navy), var(--madrid-gray));
+    color: white;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* Icons and Emojis */
+.fas, .far {
+    margin-right: 5px;
+    color: var(--madrid-gold);
+    transition: transform 0.3s ease;
+}
+
+h2 .fas, h3 .fas {
+    margin: 0 10px;
+}
+
+.fas:hover {
+    transform: scale(1.2);
+}
+
+/* Champions League Banner */
+.champions-league-banner {
+    background: var(--madrid-gold);
+    color: var(--madrid-navy);
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.champions-league-banner span {
+    position: relative;
+    z-index: 1;
+}
+
+.trophy-icons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 20px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/b/bf/UEFA_Champions_League_logo_2.svg');
+    background-size: contain;
+    background-repeat: repeat-x;
+    opacity: 0.2;
+    animation: scrollTrophies 20s linear infinite;
+}
+
+@keyframes scrollTrophies {
+    from { background-position: 0 center; }
+    to { background-position: -1000px center; }
+}
+
+/* Header styles */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav a {
+    color: var(--madrid-gold);
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav a .fas {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Match Results Section */
+#matches {
+    padding-top: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.results-container, .next-match {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.next-match {
+    text-align: center;
+    border: 2px solid var(--madrid-gold);
+}
+
+.next-match-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.next-match .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.next-match .team img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.next-match .team img:hover {
+    transform: scale(1.1);
+}
+
+.match-time {
+    text-align: center;
+    color: var(--madrid-gold);
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.match-time .date {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.match-time .time {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.match-time .venue {
+    font-size: 0.9em;
+    color: #888;
+}
+
+h2, h3 {
+    color: var(--madrid-gold);
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+.match-result {
+    background: linear-gradient(45deg, var(--madrid-navy), var(--madrid-gray));
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 60px 1fr 100px 1fr 60px;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.match-result:hover {
+    transform: translateY(-5px);
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.team-logo:hover {
+    transform: scale(1.1);
+}
+
+.team-name {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.score {
+    color: var(--madrid-gold);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.score .fas {
+    font-size: 16px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Trophy Section */
+.trophies-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.trophy-item {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, var(--madrid-navy), var(--madrid-gray));
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.trophy-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--madrid-gold);
+}
+
+.trophy-icon {
+    font-size: 3em;
+    color: var(--madrid-gold);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.trophy-item:hover .trophy-icon {
+    transform: rotate(360deg);
+}
+
+.trophy-count {
+    font-size: 2.5em;
+    color: var(--madrid-gold);
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Players Section */
+.players-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.players-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.player-card {
+    background: linear-gradient(45deg, var(--madrid-navy), var(--madrid-gray));
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.player-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--madrid-gold);
+}
+
+.player-image-container {
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.player-image-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.player-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.player-image-container:hover .player-stats {
+    transform: translateY(0);
+}
+
+.player-image-container:hover img {
+    transform: scale(1.1);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat .label {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.stat .value {
+    display: block;
+    font-size: 1.4em;
+    color: var(--madrid-gold);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.player-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--madrid-gold);
+    color: var(--madrid-navy);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.player-info {
+    margin-top: 15px;
+    text-align: left;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.player-info p {
+    margin: 8px 0;
+    color: white;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+
+.player-info p .fas {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* Footer */
+.site-footer {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top: 2px solid var(--madrid-gold);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stadium-info, .club-motto {
+    text-align: center;
+}
+
+.stadium-info h3, .club-motto h3 {
+    color: var(--madrid-gold);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.stadium-info p, .club-motto p {
+    color: #888;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav a {
+        margin: 0 5px;
+        font-size: 16px;
+    }
+
+    .match-result {
+        grid-template-columns: 40px 1fr 80px 1fr 40px;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .team-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .team-name {
+        font-size: 0.9em;
+    }
+
+    .score {
+        font-size: 20px;
+    }
+
+    .player-image-container img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .champions-league-banner {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 5px;
+    }
+
+    nav a .fas {
+        margin-right: 0;
+    }
+
+    nav a span {
+        display: none;
+    }
+
+    .match-result {
+        grid-template-columns: 30px 1fr 60px 1fr 30px;
+        padding: 10px;
+    }
+
+    .team-logo {
+        width: 25px;
+        height: 25px;
+    }
+
+    .team-name {
+        font-size: 0.8em;
+    }
+
+    .score {
+        font-size: 18px;
+    }
+
+    .match-info {
+        font-size: 0.8em;
+    }
+
+    .player-image-container img {
+        height: 200px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
